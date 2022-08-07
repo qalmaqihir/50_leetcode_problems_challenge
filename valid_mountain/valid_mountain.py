@@ -3,9 +3,12 @@ from typing import List
 
 def valid_mountain(nums:List[int])-> bool:
     i=1
+    if len(nums)<3:
+        return False
+
     while i<len(nums) and nums[i]>nums[i-1]:
         i+=1
-    if i == len(nums):
+    if i == len(nums) or i ==1:
         return False
     while i< len(nums) and nums[i]<nums[i-1]:
         i +=1
