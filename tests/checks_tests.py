@@ -1,10 +1,6 @@
 m={}
-n=10
-nn=10
-i=0
-while i<nn:
-    m=n
-    #n-=1
-    i+=1
+n=9
+for i in range(n):
+    m=i
 
 print(m)
