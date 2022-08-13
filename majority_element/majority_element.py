@@ -22,3 +22,12 @@ print(m)
 nums = [3,2,3]
 nums = [2,2,1,1,1,2,2]
 print(majority_element(nums))
+
+
+def majority_duplicate(nums:List[int])->int:
+    m={}
+    for num in nums:
+        m[num]=m.get(num,0)+1
+    for num in nums:
+        if (m[num]>len(nums)/2):
+            return num
