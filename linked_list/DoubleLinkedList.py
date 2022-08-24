@@ -7,8 +7,7 @@ class Node:
 
 class DoubleLinkedList:
     def __int__(self):
-        self.head=None
-
+        self.head = None
 
     def create_list(self, arr):
         start=self.head
@@ -29,7 +28,7 @@ class DoubleLinkedList:
 
     def print_list(self):
         temp=self.head
-        linked_list=" "
+        linked_list=""
         while(temp):
             linked_list+=(str(temp.data)+ " --> ")
             temp=temp.next
