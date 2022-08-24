@@ -35,6 +35,47 @@ class DoubleLinkedList:
 
         print(linked_list)
 
+    def count_list(self):
+        temp=self.head
+        count=0
+        while(temp is not None):
+            count+=1
+        return count
+
+    def insert_at_location(self,value, index):
+        temp=self.head
+        count=self.count_list()
+
+        if count+1<index:
+            return temp
+
+        newNode=Node(value)
+
+        if index==1:
+            newNode.next=temp
+            temp.pre=newNode
+            self.head=newNode
+            return self.head
+        if index==count+1:
+            while(temp.next is not None):
+                temp=temp.next
+            temp.next=newNode
+            newNode.prev=temp
+            return self.head
+
+        i=0
+        while(i<index-1):
+            temp=temp.next
+            i+=1
+        node_at_target=temp.next
+
+        newNode.next=node_at_target
+        node_at_target.prev=newNode
+        newNode=temp
+        return self.head
+
+
+
 
 
 arr = [1,2,3,4,5]
