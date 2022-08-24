@@ -74,6 +74,35 @@ class DoubleLinkedList:
         newNode=temp
         return self.head
 
+    def delete_at_location(self,index):
+        temp=self.head
+
+        count=self.count_list()
+        if count<index:
+            return temp
+
+        if index==1:
+            temp=temp.next
+            self.head=temp
+            return self.head
+        if count==index:
+            while(temp.next is not None and temp.next.next is not None):
+                temp=temp.next
+            temp.next=None
+            return self.head
+        i=1
+        while i< index-1:
+            temp=temp.next
+            i+=1
+        preNode=temp
+        node_at_target=temp.next
+        nextNode=node_at_target.next
+
+        nextNode.prev=preNode
+        preNode.next=nextNode
+        return self.head
+
+
 
 
 
