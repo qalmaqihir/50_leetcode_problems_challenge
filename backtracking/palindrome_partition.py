@@ -18,7 +18,7 @@ class Solution:
         n=len(s)+1
         for i in range(1,n):
             seg=s[0:i]
-            if(self.is_palin(sef)):
+            if(self.is_palin(seg)):
                 self.temp.append(seg)
                 self.dfs(s[i:])
                 self.temp.pop()
